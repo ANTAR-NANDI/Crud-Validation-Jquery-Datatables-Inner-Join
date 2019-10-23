@@ -15,6 +15,7 @@
   <thead>
     <tr>
       <!-- <th scope="col">ID</th> -->
+       <th scope="col" style="background-color: gray">PDF</th>
       <th scope="col" style="background-color: gray">NAME</th>
       <th scope="col" style="background-color: #ec5e5e">EMAIL</th>
       <th scope="col" style="background-color: #ea59d3">DATE OF BIRTH</th>
@@ -26,7 +27,7 @@
     <tbody>
     	@foreach($employees as $a)
     	<tr>
-    	  <!--  <th scope="row">{{ $a->id }}</th> -->
+    	  <td><a href="{{ URL::to('pdf/'.$a->id)}}">PDF</a></td>
             <td>{{ $a->name }}</td>
             <td>{{ $a->email }}</td>
             <td>{{ $a->birth_date }}</td>

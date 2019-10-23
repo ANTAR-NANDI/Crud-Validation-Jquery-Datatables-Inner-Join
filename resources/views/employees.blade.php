@@ -17,7 +17,6 @@
       <th scope="col" style="background-color: #5bc0de">EMAIL</th>
       <th scope="col" style="background-color: #62c462">SALARY</th>
         <th scope="col" style="background-color: #fbb450">BIRTH DATE</th>
-
 	</thead>
 	<tbody>
 		@foreach($employees as $e)
@@ -28,6 +27,7 @@
 			<td>{{$e->email}}</td>
 			<td>{{$e->salary}}</td>
 			<td>{{$e->birth_date}}</td>
+			
 		</tr>
     @endforeach
 	</tbody>

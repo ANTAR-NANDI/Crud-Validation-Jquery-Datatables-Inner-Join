@@ -7,4 +7,5 @@ use Illuminate\Database\Eloquent\Model;
 class Employee extends Model
 {
     //
+    protected $fillable=['name','email','birth_date','salary','password'];
 }

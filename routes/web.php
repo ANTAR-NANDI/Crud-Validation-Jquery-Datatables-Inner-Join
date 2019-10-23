@@ -34,12 +34,28 @@ Route::get('about/{name}/{email}','MyController@about');
 
 Route::get('add','MyController@add');
 
+//insert data
 Route::post('store','MyController@store');
 
+//Data show
 Route::get('show','MyController@show');
+
 //Edit related
 Route::get('edit/{id}','MyController@update');
 Route::post('update/{id}','MyController@update_data');
+
 //delete route
 Route::get('delete/{id}','MyController@delete');
+
+//join query
 Route::get('join-query','MyController@all');
+
+//multiple image upload
+Route::get('upload','UploadController@viewpage');
+Route::post('uploadimage','UploadController@store');
+
+//pdf generate
+Route::get('pdf/{id}','UploadController@downloadPDF');
+
+Route::get('excel','UploadController@import');
+Route::post('import','UploadController@importFile');

@@ -31,7 +31,7 @@ class MyController extends Controller
         $validatedata=$request->validate([//validate function for validation
        'name'=>'required|max:100|regex:/^[a-zA-Z-,]+(\s{0,1}[a-zA-Z-, ])*$/',
        'email'=>'required|email|unique:employees,email',//Unique in database
-       'birth_date'=>'required|date|before_or_equal:2019-10-30',
+       'birth_date'=>'required',
        'salary'=>'required|integer|between:1,2000000',
        'password'=>[
             'required',
@@ -61,6 +61,7 @@ class MyController extends Controller
 
     public function all()
     {
+      $employees=Employee::all();
         $employees=DB::table('employees')
                  ->join('departments','departments.employees_id','employees.id')
                  ->select('departments.employees_id','departments.city','departments.country','employees.email','employees.salary','employees.birth_date')
